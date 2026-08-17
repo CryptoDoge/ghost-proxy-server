@@ -14,7 +14,8 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 class AIRequest(BaseModel):
     mode: str  # "code" or "mcq"
-    image_base64: str
+    image_base64: Optional[str] = None
+    query: Optional[str] = None
 
 @app.post("/process-ai")
 def process_ai(data: AIRequest):
