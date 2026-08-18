@@ -34,7 +34,7 @@ def process_ai(data: AIRequest):
             
             # Using a fast Groq text model for the audio question
             stream_response = groq_client.chat.completions.create(
-                model="llama-3.3-70b-versatile", 
+                model="qwen/qwen3.6-27b", 
                 messages=[
                     {"role": "system", "content": "You are a helpful coding and interview assistant. Answer concisely and clearly in plain text."},
                     {"role": "user", "content": data.query}
